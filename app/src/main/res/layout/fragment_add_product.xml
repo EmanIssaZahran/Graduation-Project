@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.admin.AddProductFragment">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_product"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_add_photo_light_gray"
+        app:civ_border_color="@color/colorPrimaryDark"
+        app:civ_border_width="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_product"
+        style="@style/EditText"
+        android:layout_marginTop="40dp"
+        android:hint=" Title "
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_product" />
+
+    <EditText
+        android:id="@+id/edt_price"
+        style="@style/EditText"
+        android:layout_marginTop="12dp"
+        android:hint=" Price"
+        android:inputType="numberDecimal"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dropdown" />
+
+<!--    <EditText-->
+<!--        android:id="@+id/edt_quantity"-->
+<!--        style="@style/EditText"-->
+<!--        android:layout_marginTop="12dp"-->
+<!--        android:hint=" Quantity"-->
+<!--        android:inputType="number"-->
+<!--        android:textColor="@color/colorBlack"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/dropdown" />-->
+
+    <EditText
+        android:id="@+id/edt_description"
+        style="@style/EditText"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/colorBlack"
+        android:hint=" Description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_product" />
+
+    <Spinner
+        android:id="@+id/dropdown"
+        style="@style/EditText"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_description" />
+
+    <Button
+        android:id="@+id/btn_add_product"
+        style="@style/ButtonText"
+        android:layout_width="175dp"
+        android:layout_marginTop="50dp"
+        android:text="Add Product "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_price" />
+
+    <ProgressBar
+        android:id="@+id/pb_product"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

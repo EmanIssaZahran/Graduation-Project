@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_margin="15dp"
+    tools:context=".ui.activity.ChooseUser">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:padding="20dp"
+        android:src="@drawable/person_dark_pink"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+       />
+
+    <TextView
+        android:id="@+id/txt_choose_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="275dp"
+        android:gravity="center"
+        android:text="Choose User"
+        android:textAllCaps="true"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:shadowRadius="10"
+        android:shadowColor="@color/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_user"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:layout_marginStart="40dp"
+        app:cardCornerRadius="75dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_choose_user">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/ic_boy" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_admin"
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        app:cardCornerRadius="75dp"
+        android:layout_marginTop="75dp"
+        app:layout_constraintStart_toEndOf="@+id/card_user"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_choose_user">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_admin"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:src="@drawable/ic_seller" />
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="65dp"
+        android:text="Customer"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic"
+        android:shadowRadius="5"
+        android:shadowColor="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_user"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="32dp"
+        android:text="Seller"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic"
+        android:shadowColor="@color/colorPrimary"
+        android:shadowRadius="5"
+        app:layout_constraintStart_toEndOf="@+id/txt_customer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_admin"/>
+
+    <Button
+        android:id="@+id/btn_choose_user"
+        android:layout_width="330dp"
+        android:layout_height="wrap_content"
+        android:text="CHOOSE USER"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="15dp"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/shape_button02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

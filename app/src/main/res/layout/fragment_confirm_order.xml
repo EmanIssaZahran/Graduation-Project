@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".ui.fragment.user.ConfirmOrderFragment">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_receive_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/colorLightPink01"
+                android:gravity="center"
+                android:padding="5dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowRadius="2"
+                android:text="@string/order_delivery_location"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/rg_receiving_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/txt_receive_order">
+
+                <RadioButton
+                    android:id="@+id/rb_to_the_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/sending_to_the_address" />
+
+                <LinearLayout
+                    android:id="@+id/lay_describe_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/txt_home_location_gps"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="User Address"
+                        android:textSize="15sp" />
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/txt_home_location_des"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="5dp"-->
+<!--                        android:layout_marginBottom="5dp"-->
+<!--                        android:padding="5dp"-->
+<!--                        android:text="Describe your location"-->
+<!--                        android:textColor="@color/colorBlack"-->
+<!--                        android:textSize="17sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/edt_add_your_location"-->
+<!--                        style="@style/EditText"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:background="@drawable/shape_rect01"-->
+<!--                        android:hint="Country, City, Street, Building Num."-->
+<!--                        android:textSize="15sp" />-->
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/rb_receive_from_the_site"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/receiving_from_the_site" />
+
+                <TextView
+                    android:id="@+id/txt_shop_location"
+                    style="@style/EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receiving_address"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+            </RadioGroup>
+
+
+            <TextView
+                android:id="@+id/txt_payment_methods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorLightPink01"
+                android:gravity="center"
+                android:padding="5dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowRadius="2"
+                android:text="@string/payment_method"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rg_receiving_order" />
+
+            <RadioGroup
+                android:id="@+id/rg_payment_methods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@+id/txt_payment_methods">
+
+                <RadioButton
+                    android:id="@+id/rb_payment_when_receiving"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="@string/cash_on_delivery" />
+
+                <RadioButton
+                    android:id="@+id/rb_visa_mastercard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/visa_mastercard" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/txt_order_summary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorLightPink01"
+                android:gravity="center"
+                android:padding="5dp"
+                android:shadowColor="@color/colorBlack"
+                android:shadowRadius="2"
+                android:text="@string/order_summary"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/rg_payment_methods" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_order_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/txt_order_summary" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/shape_rect01"
+                app:layout_constraintBottom_toTopOf="@id/btn_checkout"
+                app:layout_constraintTop_toBottomOf="@id/rv_order_list">
+
+                <TextView
+                    android:id="@+id/txt_products_price"
+                    android:layout_width="125dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:text="@string/products_price"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txt_delivery_fee"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_products_price_num"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txt_delivery_fee_num"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txt_products_price"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_delivery_fee"
+                    android:layout_width="125dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_marginBottom="0dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:text="@string/delivery_fee"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txt_total_price"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_delivery_fee_num"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/txt_total_price_num"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txt_total_price" />
+
+                <TextView
+                    android:id="@+id/txt_total_price"
+                    android:layout_width="125dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:text="@string/total_price"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_total_price_num"
+                    android:layout_width="250dp"
+                    android:layout_height="30dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txt_total_price" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <Button
+                android:id="@+id/btn_checkout"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/shape_button01"
+                android:text="@string/checkout"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_margin="5dp"
+                android:layout_marginTop="35dp"
+                android:background="@drawable/shape_circle01"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

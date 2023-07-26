@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.ProfileFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       app:layout_constraintTop_toTopOf="parent
+">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- app:c_border="true" -->
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_img"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_person_light_gray"
+                app:civ_border_color="@color/colorPrimaryDark"
+                app:civ_border_width="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edt_name_admin"
+                style="@style/EditText"
+                android:layout_marginTop="30dp"
+                android:drawableStart="@drawable/ic_person_dark_pink"
+                android:drawablePadding="10dp"
+                android:hint="@string/full_name"
+                android:inputType="textPersonName|textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_img" />
+
+            <EditText
+                android:id="@+id/edt_shop_name"
+                style="@style/EditText"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_store_dark_pink"
+                android:drawablePadding="10dp"
+                android:hint="@string/shop_name"
+                android:inputType="textPersonName|textCapWords"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_name_admin" />
+
+            <EditText
+                android:id="@+id/edt_phone"
+                style="@style/EditText"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_phone_dark_pink"
+                android:drawablePadding="10dp"
+                android:hint="@string/phone"
+                android:inputType="phone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_shop_name" />
+
+            <EditText
+                android:id="@+id/edt_deliveryFee"
+                style="@style/EditText"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_local_shipping_dark_pink"
+                android:drawablePadding="10dp"
+                android:hint="@string/delivery_fee"
+                android:inputType="numberDecimal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_phone" />
+
+            <LinearLayout
+                android:id="@+id/lay_gps"
+                style="@style/EditText"
+                android:padding="1dp"
+                android:paddingStart="9dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edt_deliveryFee"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/edt_address"
+                    android:layout_width="325dp"
+                    android:layout_height="48dp"
+                    android:paddingEnd="5dp"
+                    android:background="@drawable/shape_rect01"
+                    android:drawableStart="@drawable/ic_address_dark_pink"
+                    android:drawablePadding="10dp"
+                    android:hint="@string/address"
+                    android:inputType="textPostalAddress" />
+
+                <ImageButton
+                    android:id="@+id/img_btn_gps"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="5dp"
+                    android:src="@drawable/ic_gps_dark_pink"
+                    />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/edt_email_register"
+                style="@style/EditText"
+                android:layout_marginTop="12dp"
+                android:drawableStart="@drawable/ic_mail_dark_pink"
+                android:drawablePadding="10dp"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lay_gps" />
+
+            <Button
+                android:id="@+id/btn_update"
+                style="@style/ButtonText"
+                android:layout_marginTop="25dp"
+                android:text="SAVE"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edt_email_register" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
